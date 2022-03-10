@@ -12,6 +12,7 @@ public class Pessoa{
     String numeroDeEmergencia;
     String grupoSanguineo;
     int numCorrida;
+    String corridaInscrito;
 
     public Pessoa(int RG,
                   String nome,
@@ -73,8 +74,16 @@ public class Pessoa{
         return numCorrida;
     }
 
+    public String getCorridaInscrito() {
+        return corridaInscrito;
+    }
+
     //------------ SETTERS -----------------------
     public void setNumCorrida(int numCorrida) {
         this.numCorrida = numCorrida;
+    }
+
+    public void setCorridaInscrito(String corridaInscrito) {
+        this.corridaInscrito = corridaInscrito;
     }
 }

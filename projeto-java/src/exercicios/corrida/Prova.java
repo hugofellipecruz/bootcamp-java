@@ -13,15 +13,23 @@ public class Prova{
         this.circuitos.put("grande",new Circuito(2800));
     }
 
-    public void inscreverParticipante(String tamanhoCircuito){
+    public float inscreverParticipante(String tamanhoCircuito){
         Pessoa novoParticipante = new Pessoa();
         Circuito circuitoAInserir = this.circuitos.get(tamanhoCircuito);
 
         int idade = novoParticipante.getIdade();
         if(idade < 18 && tamanhoCircuito == "grande"){
             System.out.println("proibida inscricao - categoria maior nao permite participantes menores de 18 anos");
+            return 0;
         }else{
+            novoParticipante.setCorridaInscrito(tamanhoCircuito);
             circuitoAInserir.addParticipante(novoParticipante);
+            int idadeParticipante = novoParticipante.getIdade();
+            if(idade<18){
+                return circuitoAInserir.getPrecoMenor18();
+            }else{
+                return circuitoAInserir.getPrecoAcima18();
+            }
         }
     }
     public void showCadastrados(String tamanhoCircuito){
@@ -48,15 +56,14 @@ public class Prova{
 
     public static void main(String args[]){
         Prova bravusRace = new Prova();
-        bravusRace.inscreverParticipante("pequeno");
-        bravusRace.inscreverParticipante("pequeno");
-        bravusRace.inscreverParticipante("pequeno");
-        bravusRace.inscreverParticipante("pequeno");
-        bravusRace.inscreverParticipante("pequeno");
-        bravusRace.inscreverParticipante("pequeno");
-        bravusRace.inscreverParticipante("pequeno");
-        bravusRace.inscreverParticipante("pequeno");
-        bravusRace.inscreverParticipante("pequeno");
+        System.out.println("Vai pagar" +bravusRace.inscreverParticipante("pequeno"));
+        System.out.println("Vai pagar" +bravusRace.inscreverParticipante("pequeno"));
+        System.out.println("Vai pagar" +bravusRace.inscreverParticipante("pequeno"));
+        System.out.println("Vai pagar" +bravusRace.inscreverParticipante("pequeno"));
+        System.out.println("Vai pagar" +bravusRace.inscreverParticipante("pequeno"));
+        System.out.println("Vai pagar" +bravusRace.inscreverParticipante("pequeno"));
+        System.out.println("Vai pagar" +bravusRace.inscreverParticipante("pequeno"));
+        System.out.println("Vai pagar" +bravusRace.inscreverParticipante("pequeno"));
 
         bravusRace.inscreverParticipante("medio");
         bravusRace.inscreverParticipante("medio");
