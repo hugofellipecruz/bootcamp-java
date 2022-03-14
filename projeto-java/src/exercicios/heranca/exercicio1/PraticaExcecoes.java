@@ -38,6 +38,7 @@ public class PraticaExcecoes {
             System.out.println("programa finalizado");
         }
         */
+        // Exercicio 1 - B
         try{
             System.out.println(excecao.divide());
         }catch (IllegalArgumentException exception){
