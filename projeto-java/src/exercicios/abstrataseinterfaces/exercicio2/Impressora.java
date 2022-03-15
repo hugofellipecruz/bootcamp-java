@@ -2,7 +2,6 @@ package exercicios.abstrataseinterfaces.exercicio2;
 
 public class Impressora implements Imprimivel {
 
-
     @Override
     public void imprimir(Object o) {
         System.out.println(o.toString());
