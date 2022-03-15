@@ -32,7 +32,7 @@ public class Pessoa {
     public static void main (String args[]){
         Pessoa pessoaConstrutorVazio = new Pessoa();
         Pessoa pessoaConstrutorMenosParametros = new Pessoa("Hugo",28,"!@#dsfd121312");
-        Pessoa pessoaConstrutorCompleto = new Pessoa("Hugo",28,"!@#dsfd121312",83.5,1.84);
+        Pessoa pessoaConstrutorCompleto = new Pessoa("Hugo",28,"!@#dsfd121312", 83F, (float) 1.84);
         //Pessoa pessoaConstrutorIncorreto = new Pessoa("Hugo",28);
         //Incorreto pois o construtor com 2 parametros nao está criado
         System.out.println("Hello World");
