@@ -1,15 +1,34 @@
-package com.mercadolivre.DTO;
+package com.mercadolivre.DTO.repository;
 
+import com.mercadolivre.DTO.model.Esporte;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.NoSuchElementException;
 
-public class EsportesRepository {
-    LinkedList<Esporte> repository;
+
+//@Repository
+public class EsportesRepository implements RepositoryHugo<Esporte> {
+    LinkedList<Esporte> repositorio;
 
     public EsportesRepository() {
-        this.repository = new LinkedList<>();
+        this.repositorio = new LinkedList<>();
     }
 
-    public void addSport(Esporte esporte){
-        this.repository.add(esporte);
+    @Override
+    public LinkedList<Esporte> findAll() {
+        return repositorio;
+    }
+
+    @Override
+    public Esporte findByName(String name) {
+        try{
+            return repositorio.stream()
+                    .filter(esporte->esporte.getName() == name)
+                    .findFirst()
+                    .get();
+        }catch (NoSuchElementException e){
+            return null;
+        }
+
     }
 }

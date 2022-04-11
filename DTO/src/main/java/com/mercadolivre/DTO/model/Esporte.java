@@ -1,14 +1,23 @@
-package com.mercadolivre.DTO;
+package com.mercadolivre.DTO.model;
 
-import java.util.Random;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+
+
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Esporte {
+
     private String nome;
     private String nivel;
 
-    public Esporte() {
-        Random generator = new Random();
-        this.nome = "esporte " + generator.nextInt(100);
-        this.nivel = "nivel " + generator.nextInt(100);
+
+    public String getName() {
+        return nome;
     }
 }
